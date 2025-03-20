@@ -12,8 +12,8 @@ pkgs.rPackages.buildRPackage {
     paper (2016, <doi:10.18637/jss.v071.i02>. Either version 2 or 3 of the
     'Protocol Buffers' 'API' is supported.
   '';
+  nativeBuildInputs = with pkgs.rPackages; [ Rcpp ] ++ [ pkgs.protobuf3_12 ];
   propagatedBuildInputs = with pkgs.rPackages; [ 
     RCurl
-    Rcpp
   ];
 }
